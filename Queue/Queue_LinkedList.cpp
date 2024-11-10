@@ -15,7 +15,6 @@ struct Queue
     void enqueue(int x)
     {
 
-        //Your code starts here #001
     node *a = new node;
     a->next = NULL;
     a->val = x;
@@ -30,12 +29,12 @@ struct Queue
       tail->next = a;
       tail = a;
     }
-        //Your code ends here #001
+        
     }
 
     int dequeue(){
 
-        //Your code starts here #002
+        
         if (!head){
         return -1;
     }
@@ -57,13 +56,12 @@ struct Queue
       return x;
     }
 
-        //Your code ends here #002
-
+        
 
     }
 
     Queue* sortQueue(Queue* q){
-    //Your code starts here #003
+    
     if(q->head==q->tail){
         return q;
     }
@@ -83,7 +81,7 @@ struct Queue
         q1->head = q1->head->next;
     }
     return q;
-    //Your code ends here #003
+    
 }
 
 };
