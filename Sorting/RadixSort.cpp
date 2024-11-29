@@ -1,5 +1,8 @@
 #include<iostream>
 using namespace std;
+
+// Time Complexity : O(d*n)
+
 void countsort(int a[],int n,int pos){
     int ans[n];
     int freq[10]={0};
