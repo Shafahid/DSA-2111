@@ -18,37 +18,15 @@ struct Node
     }
 };
 
-Node *insert(Node *root, int x)
-{
-
-    Node *temp = new Node(x);
-
-    // If tree is empty
-    if (root == NULL)
-        return temp;
-
-    // Find the node who is going
-    // to have the new node temp as
-    // it child. The parent node is
-    // mainly going to be a leaf node
-    Node *parent = NULL, *curr = root;
-    while (curr != NULL)
-    {
-        parent = curr;
-        if (curr->key > x)
-            curr = curr->left;
-        else if (curr->key < x)
-            curr = curr->right;
-        else
-            return root;
+Node *insert(Node *root,int key){
+    if(root==NULL){
+        return new Node(key);
     }
-
-    // If x is smaller, make it
-    // left child, else right child
-    if (parent->key > x)
-        parent->left = temp;
-    else
-        parent->right = temp;
+    if(key < root->key){
+        root->left = insert(root->left,key);
+    }else{
+        root->right = insert(root->right,key);
+    }
     return root;
 }
 
@@ -77,6 +55,16 @@ Node *search(Node *root, int key)
         }
     }
     return NULL;
+}
+
+bool find(Node *curr,int key){
+    if(curr==NULL) return false;
+    if(curr->key==key) return true;
+    if(key < curr->key){
+        return find(curr->left,key);
+    }else{
+        return find(curr->right,key);
+    }
 }
 
 Node *recursive_search(Node *root,int key)
