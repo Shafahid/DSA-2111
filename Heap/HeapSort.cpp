@@ -23,7 +23,7 @@ void Heapify(int a[],int index,int n){
 }
 
 void build_max_heap(int a[],int n){
-    for(int i=n/2-1;i>=0;i--){
+    for(int i=n/2-1;i>=0;i--){   // starting from the first non-leaf node
         Heapify(a,i,n);
     }
 }
