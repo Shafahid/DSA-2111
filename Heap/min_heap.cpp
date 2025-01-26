@@ -5,7 +5,7 @@ struct MinHeap{
     int capacity;
     int heap_size;
     MinHeap(int n){
-        capacity = capacity;
+        capacity = n;
         heap_size = 0;
         arr = new int[n];
     }
